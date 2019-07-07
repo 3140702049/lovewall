@@ -1,0 +1,47 @@
+<!--
+ * @Description: 
+ * @version: 2.0
+ * @Author: 小橙子
+ * @Date: 2019-05-16 14:31:30
+ * @Website: https://www.kres.cn
+ * @Email: 1697779290@qq.com
+ -->
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>{$data.system.title}</title>
+    <meta charset="utf-8"/>
+    <meta name="description" content="{$data.system.description}"/>
+    <meta name="keywords" content="{$data.system.keywords}"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no"/>
+    <link rel="shortcut icon" href="__STATICS__/favicon.ico"/>	
+    <link rel="stylesheet" href="__STATIC__/layui/css/layui.css"/>
+    <link href="//cdn.bootcss.com/font-awesome/4.7.0/css/font-awesome.css" rel="stylesheet"/>
+    <link rel="stylesheet" href="__STATICS__/css/app.css" type="text/css" />
+    <link href="__STATICS__/css/i.css" rel="stylesheet"/>
+    <script src="//cdn.bootcss.com/jquery/2.2.4/jquery.min.js"></script>
+    <script src="__STATIC__/layui/layui.js"></script>
+    <script src="https://cdn.bootcss.com/jquery-cookie/1.4.1/jquery.cookie.min.js"></script>
+  </head>
+<body>
+<div id="header">
+	<div class="header">
+		<div class="heart">
+		</div>
+		<div class="header-weather" style="float:right;position: initial;margin-top: -240PX;margin-right: 10px">
+			<div id="temp1" style="float: right;font-size: 18px ;margin-right: -0px;color: white; margin-top: -102px" >loding...</div>
+			<img id="weather-ico" style="width: 30px;float: right;" src="" alt="">
+		</div>
+		<div class="beat beat-1">
+		</div>
+		<div class="beat beat-2">
+		</div>
+	</div>
+	<!-- 一言 -->
+	<center>
+	<p id="hitokoto" style="padding:10px">
+		:D 获取中···
+	</p>
+	</center>
+	<script src="https://api.kres.cn/hitokoto?encode=js" defer=""></script>
+	<!-- 一言Ending -->
