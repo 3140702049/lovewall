@@ -13,10 +13,15 @@ LoveWall，顾名思义，其实就是表白墙。
 7. wait Update。
 #### 官方信息
 1.官方演示地址：http://lw2.demo.kres.cn  OR https://521wall.cn
+
 2.官方BUG提交反馈：https://pro.kres.cn/form/index/bugsubmit
+
 3.官方邮箱反馈地址：admin@jishuzy.com  OR admin@mail.catni.cn
+
 4.官方完整更新下载地址：https://gitee.com/ncnet/10001
+
 5.官方增量更新下载地址：https://pro.kres.cn/update/get?appid=10002
+
 6.官方wiki文档：https://wiki.521wal.cn
 此版本将会不断更新！
 #### 软件架构
