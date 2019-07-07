@@ -28,9 +28,6 @@
                <div class="layui-card-body">
                     <div class="layui-container">  
                     <div class="layui-row">
-                        <div class="layui-col-md2">
-                            <div class="layui-anim layui-anim-up" style="vertical-align:middle;text-align: center;"><img style="display:inline-block;" src="{$data.logo_img}" alt=""></div>
-                        </div>
                         <div class="layui-col-md10">
                         <span class="layui-badge layui-bg-orange">名称</span>&nbsp;<span class="layui-badge-rim">{$data.web_name}</span><br>
                         <span class="layui-badge layui-bg-blue">Email</span>&nbsp;<span class="layui-badge layui-bg-green">{$data.email}</span><br>
@@ -45,9 +42,20 @@
              </div>
            </div>
         </div>
-               <div class="layui-col-md5">
+              <div class="layui-col-md5">
+                  <div class="layui-card">
+                      <div class="layui-card-header">Logo预览</div>
+                      <div class="layui-card-body">
+                        <div class="layui-anim layui-anim-up" style="vertical-align:middle;text-align: center;">
+                        <img style="display:inline-block;" src="{$data.logo_img}" width="165px" height="165px">
+                         <p id="demoText"></p>
+                      </div>
+                      </div>
+                  </div>
+              </div>
+               <div class="layui-col-md12">
                  <div class="layui-card">
-                   <div class="layui-card-header">操作</div>
+                   <div class="layui-card-header">通知操作</div>
                    <div class="layui-card-body">
                         <form class="layui-form" action="">
                         <div class="layui-form-item layui-form-text">
@@ -56,17 +64,20 @@
                                 <div class="layui-input-block">
                                     <textarea style="height: 40px" name="content" placeholder="输入要驳回的内容" class="layui-textarea">您的提交的表白墙校区 {$data.web_name} 已审核</textarea>
                                 </div>
-                                </div>
-                            <div class="layui-form-item">
+                                <br>
+                                <div class="layui-form-item">
                                 <div class="layui-input-block" style="float:right">
                                     <button class="layui-btn layui-btn-radius layui-btn-normal" lay-submit lay-filter="formAdopt">通过</button>
                                     <button class="layui-btn layui-btn-radius layui-btn-danger" lay-submit lay-filter="formReject">驳回</button>
                                 </div>
                                 </div>
+                        </div>
                         </form>
                    </div>
+                   </div>
                  </div>
-               </div>
+              </div>
+              </div>
        </div> 
   
  <!-- 你的HTML代码 -->

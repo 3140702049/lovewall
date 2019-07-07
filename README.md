@@ -11,6 +11,8 @@ LoveWall，顾名思义，其实就是表白墙。
 5. 分享页
 6. 涉证、涉H、暴力、违禁物等名词进行检测
 7. wait Update。
+#### 默认后台
+后台入口/admin  账号admin  密码521wall.cn
 #### 官方信息
 1.官方演示地址：http://lw2.demo.kres.cn  OR https://521wall.cn
 
@@ -44,7 +46,8 @@ LoveWall，顾名思义，其实就是表白墙。
 2. 上传源码到服务器并设置运行目录为 /public
 3. 使用伪静态规则ThinkPHP（此处不提供）
 4. 导入根目录下的 import.sql 文件，并配置application/database.php文件下的连接信息
-5. 大功告成，开始尽情使用吧！
+5. 首次使用请配置发信邮箱 \extend\PHPMailer\SendEmail.php ,否则校区审核无法通知
+6. 大功告成，开始尽情使用吧！
 
 #### 参与贡献
 1. Csdn 社区、手册 (滑稽.jpg)
