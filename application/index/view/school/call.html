@@ -55,19 +55,6 @@
 				<h2>学区ID:{$data.zid}</h2>
                 <h2>你想说的话</h2>
                 <textarea name="text" id="text" placeholder="你想说的话0-200字" style="min-height: 120px;" maxlength="200" onchange="this.value=this.value.substring(0,200)" onkeydown="this.value=this.value.substring(0,200)" onkeyup="this.value=this.value.substring(0,200)"></textarea>
-                <!--图片-->
-                <div class="layui-upload">
-                  <div style="position: relative;">
-                    <button type="button" class="layui-btn" id="test2" style = "background-color: transparent; border: 0;">
-                        <img id="upload" src="__STATICS__/img/upload.png" style="width: 40px; height: 40px; vertical-align: middle;" />
-                    </button>
-                    <blockquote class="layui-elem-quote layui-quote-nm" style="margin-top: 10px;">
-                    预览图：
-                    <div class="layui-upload-list" id="demo2"></div>
-                    </blockquote>
-                  </div>
-                </div>
-                <!--图片-->
                 <h2 id="h2qq">你的Q Q</h2>
                 <input name="qq" id="qq" placeholder="QQ"  >
                 <h2 id="h2name">你的昵称</h2>
