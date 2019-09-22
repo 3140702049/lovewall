@@ -24,7 +24,7 @@ LoveWall，顾名思义，其实就是表白墙。
 
 5.官方增量更新下载地址：https://pro.kres.cn/update/get?appid=10002
 
-6.官方wiki文档：https://wiki.521wal.cn
+6.官方wiki文档：https://wiki.521wall.cn
 此版本将会不断更新！
 #### 软件架构
 1.前端框架：LayUI 2.4、Jquery
