@@ -77,7 +77,7 @@ class Index extends Controller
       	if(Request::instance()->post('data')){
             $data=Request::instance()->post('data');
             $data=json_decode($data,true);
-            unset($data['smfile']);
+            unset($data['image']);
             $data['ip']=Request::instance()->ip();
             $data['addtime']=date('Y-m-d H:i:s');
             $res=Db::name('open_school')->insert($data);
