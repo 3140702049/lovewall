@@ -6,150 +6,36 @@
 				<a href="{:url('index/openschool')}" class="">开通</a>
 				<a href="{:url('index/serachInfo')}" class="">搜索</a>
 				<a href="{:url('index/about')}" class="">关于</a>
-				</nav>
+			</nav>
 		</div>
 	</div>
 </div>
 <div id="content">
 	<div class="container">
 		<div class="list-item">
-				{volist name="indexContent" id="vo"}
-						<div class="item {eq name='vo.status' value='1'}girl{/eq}" >
-				<article style="">
-               		{$vo.web_description}
-				</article>
-				<div class="author">		
+			{volist name="indexContent" id="vo"}
+				<div class="item {eq name='vo.status' value='1'}girl{/eq}" >
+					<article style="">
+	               		{$vo.web_description}
+					</article>
+					<div class="author">		
 						<img class="avatar" src="{$vo.web_logo}">
-					<p class="name">
-						{$vo.web_name}
-					</p>
-					<img style="float: right;margin-top: -50px;margin-right: 10px;" id="scho-{$vo.zid}{$vo.web_name}" class="avatars" width="40px" src="__STATICS__/img/goto.png" alt="">
-					<p class="date"><i style="color:#F4A7B9" class="layui-icon">&#xe756;</i>&nbsp;<span style="color:#F4A7B9">{gt name="vo.hot" value="99"}{gt name="vo.hot" value="1000"}{$vo.hot/1000}K{else/}99+{/gt}{else/}{$vo.hot}{/gt}</span>&nbsp;<i style="color:#F4A7B9" class="layui-icon">&#xe611;</i>&nbsp;<span style="color:#F4A7B9">{gt name="vo.count" value="99"}{gt name="vo.count" value="1000"}{$vo.count/1000}K{else/}99+{/gt}{else/}{$vo.count}{/gt}</span></p>
+						<p class="name">
+							{$vo.web_name}
+						</p>
+						<img style="float: right;margin-top: -50px;margin-right: 10px;" id="scho-{$vo.zid}{$vo.web_name}" class="avatars" width="40px" src="__STATICS__/img/goto.png" alt="">
+						<p class="date">
+							<i style="color:#F4A7B9" class="layui-icon">&#xe756;</i>
+							&nbsp;<span style="color:#F4A7B9">{gt name="vo.hot" value="99"}{gt name="vo.hot" value="1000"}{$vo.hot/1000}K{else/}99+{/gt}{else/}{$vo.hot}{/gt}</span>
+							&nbsp;<i style="color:#F4A7B9" class="layui-icon">&#xe611;</i>
+							&nbsp;<span style="color:#F4A7B9">{gt name="vo.count" value="99"}{gt name="vo.count" value="1000"}{$vo.count/1000}K{else/}99+{/gt}{else/}{$vo.count}{/gt}</span>
+						</p>
+					</div>
 				</div>
-			</div>
 			{/volist}
 		</div>
 	</div>
 	<div class="list-pages">
-			{$page}
+		{$page}
 	</div>  
-  <br/>
-  <br/>
-
-	<div class="copyright container">
-		&copy; {$Request.time|date="Y",###} 
-		<a href="/">{$data.system.name}</a>&nbsp;&nbsp;
-		<a href="http://beian.miit.gov.cn" target="_blank">{$data.system.icp}</a>
-		&nbsp;{$data.system.cnzz}
-	</div>
-</div>
-<div id="footer">
-<script>
-	layui.use(['layer', 'form'], function(){
-	var layer = layui.layer
-	,form = layui.form;
-	});
-	console.log(`%c Info:`, `color: #03A9F4; font-weight: bold`, '欢迎来到这个页面！首先感谢您信任我们并使用我们的程序，遇到BUG可提交至下方邮箱，谢谢您的配合！');
-	console.log(`%c Site:`, `color: #03A9F4; font-weight: bold`, 'https://pro.kres.cn/form/index/bugSubmit Or https://521wall.cn');
-	console.log(`%c Email:`, `color: #4CAF50; font-weight: bold`, '1697779290@qq.com Or wy-hai@qq.com');
-	var notice=$.cookie('notice');
-	getNotice();
-	function getNotice(){
-		$.post("{:url('index/getNotice')}",{func:'get'},function(data){
-        	if(data.code==1){
-				if($.cookie('notice_id')!=data.tid){
-					var notice_tpis=layer.confirm(data.info, {
-						btn: ['我知道了','取消'] //按钮
-						}, function(){
-							$.cookie('notice_id',data.tid,{ expires: 7 });
-							layer.close(notice_tpis);
-						}, function(){
-							//取消
-							layer.close(notice_tpis);
-					});
-				}
-			}else{
-				return '获取失败';
-			}
-        },'JSON');
-    }
-	$('.avatars').click(function(){
-		var zid=this.id;
-		var sub_id=zid.substring(5,41);
-      	var name=zid.substr(41,100);
-		layer.open({
-			title:'Tips',
-			content:'即将进入<br/>'+name,
-			btn:['GO!'],
-			yes:function(index){
-				location.href="//"+window.location.host+"/index/school/indexpage/zid/"+sub_id;
-				layer.close(index);
-			}
-		})
-	});
-	$('.likecall').click(function(){
-		var id=this.id;
-		var sub_id=id.substring(5,9);
-		var dzan = $(this);
-		$.get("{:url('index/likeSubmit')}",{
-			id:id,
-		},function(data){
-			if (data.status=='1') {
-				layer.msg(data.info,{icon:1});
-				$('#'+id).attr('class','likecall fa fa-thumbs-up');	
-				dzan.parent().find('#likenums').text(data.count);
-			}else{
-				layer.msg(data.info,{icon:2});
-			}
-		},'json');
-	})
-	$('.comments').click(function() {
-		var id=this.id;
-      	var ids=id.substr(5,9);
-       	window.location.href="./article?id="+ids;
-	});
-	$.ajax({
-		type: 'GET',
-		url: 'https://www.tianqiapi.com/api/',
-		data: 'version=v1&style=1001&city=',
-		dataType: 'JSON',
-		error: function () {
-			alert('网络错误');
-		},
-		success: function (res) {
-			uptime = res.update_time.substring(11);
-			uptime = uptime.substring(0,uptime.length-3);
-			console.log('【' + res.city + '】' + res.data[0].wea + ' ' + res.data[0].tem1 + '/' + res.data[0].tem2 + ',' + uptime + '更新~');
-			$("#temp1").html(res.data[0].tem);
-			$('#weather-ico').attr('src','__STATICS__/img/'+res.data[0].wea_img+".png");
-		}
-	});
-	var ismobile="{$data.ismobile}";
-	if(ismobile==false){
-    	(()=>{let 
-        h=42;
-        let d=(n)=>Math.floor(Math.random()*n);
-        let k=(c)=>{let s=document.createElement('style');
-        if(!!(window.attachEvent && !window.opera)){
-            s.styleSheet.cssText=c;
-        }else{
-            s.appendChild(document.createTextNode(c));
-        }
-        document.getElementsByTagName('head')[0].appendChild(s);
-    };
-    k('@keyframes u{0%{transform:rotate(0deg);}25%{transform:rotate(10deg);}50%{transform:rotate(0deg);}75%{transform:rotate(-10deg);}100%{transform:rotate(0deg);}};');
-    k('@keyframes m{0%{margin-top:2vh;opacity:0;}20%{opacity:1.0;margin-top:0vh;margin-left:0vw;transform:rotate('+d(90)+'deg);}100%{opacity:0.4;margin-top:100vh;margin-left:'+d(4)+'vw;transform:rotate(1080deg);}};');
-    let w=document.createElement('div');
-    w.id='daWorld';
-    w.style='animation:u 60s ease-in infinite;position:fixed;top:0;right:0;bottom:0;left:0;pointer-events:none;';
-    document.body.appendChild(w);
-    while(h--){
-        let o=document.createElement('div');
-        o.style=`pointer-events:none;opacity:0;animation:m ${d(14)+6}s ease-in ${d(4000)}ms infinite;z-index:1000;position:fixed;top:${d(40)}vh;left:${d(100)}vw;font-size:${d(40)+20}px;color:${['#d00','#e66','#fcc'][d(3)]};`;
-        o.innerHTML=['♡','♥'][d(2)];w.appendChild(o);
-        }})()
-    }
-</script>  
-</div>
-</body>
-</html>
+	{include file="comm/footer" /}

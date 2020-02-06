@@ -50,7 +50,31 @@ class Index extends Controller
       $output = curl_exec($curl);  
       curl_close($curl);  
       return $output;  
-  }  
+  } 
+	public function upload(){
+    $file = request()->file('file');    
+    // 移动到框架应用根目录/public/uploads/ 目录下
+    if($file){
+        $info = $file->move(ROOT_PATH . 'public' . DS . 'uploads');
+        if($info){
+            // 成功上传后 获取上传信息
+            // 输出 jpg
+            // echo $info->getExtension();
+            // // 输出 20160820/42a79759f284b767dfcb2a0197904287.jpg
+            // echo $info->getSaveName();
+            // // 输出 42a79759f284b767dfcb2a0197904287.jpg
+            // echo $info->getFilename(); 
+            $data['code']=0;
+            $data['data']['src']='//'.$_SERVER['SERVER_NAME'].'/uploads/'.$info->getSaveName();
+            return json($data);
+        }else{
+            // 上传失败获取错误信息
+            $data['code']=-1;
+            $data['msg']=$file->getError();
+            return json($data);
+        }
+    }
+	}
     public function openSchool(){
          /**
          * @name: 安全过滤
@@ -77,7 +101,7 @@ class Index extends Controller
       	if(Request::instance()->post('data')){
             $data=Request::instance()->post('data');
             $data=json_decode($data,true);
-            unset($data['image']);
+            unset($data['file']);
             $data['ip']=Request::instance()->ip();
             $data['addtime']=date('Y-m-d H:i:s');
             $res=Db::name('open_school')->insert($data);

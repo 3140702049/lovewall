@@ -2,15 +2,22 @@
 	<div class="menu">
 		<div class="container">
 			<nav>
-			<a href="/" class="">首页</a>
-      <a href="{:url('index/openschool')}" class="">开通</a>
-      <a href="{:url('index/serachInfo')}" class="">搜索</a>
-      <a href="{:url('index/about')}" class="active">关于</a>
+				<a href="/" class="">首页</a>
+    			<a href="{:url('index/openschool')}" class="">开通</a>
+    			<a href="{:url('index/serachInfo')}" class="">搜索</a>
+    			<a href="{:url('index/about')}" class="active">关于</a>
 			</nav>
 		</div>
 	</div>
 </div>
-
+<style>
+	#bg {
+		background-image: url('https://i.loli.net/2020/02/06/ynzstG41qdU7EeT.png')!important;
+		background-repeat: no-repeat;
+		background-position: right;
+		height: 100%;
+	}
+</style>
 <div id="content">
 <div style="padding:10px"></div>
     <div style="padding: 20px; background-color: #F2F2F2;">
@@ -23,28 +30,37 @@
         </div>
         <div class="layui-card">
             <div class="layui-card-header">作者留言</div>
-            <div class="layui-card-body">
+            <div class="layui-card-body" id="bg">
               <ul class="layui-timeline">
+              	  <li class="layui-timeline-item">
+                      <i class="layui-icon layui-timeline-axis"></i>
+                      <div class="layui-timeline-content layui-text">
+                        <h3 class="layui-timeline-title">2020年2月6日</h3>
+                        <p>
+                          LoveWall 2.0Pro <i class="layui-icon">&#xe664;</i>
+                          <br>对别人抱有期待，只能让自己受伤。
+                        </p>
+                      </div>
+                  </li>
                   <li class="layui-timeline-item">
                       <i class="layui-icon layui-timeline-axis"></i>
                       <div class="layui-timeline-content layui-text">
-                        <h3 class="layui-timeline-title">5月20日</h3>
+                        <h3 class="layui-timeline-title">2019年5月20日</h3>
                         <p>
-                          LoveWall 2.0 的一切准备工作都已到位并发布。
-                          <br>不枉近百个日日夜夜与之为伴。因小而大，因弱而强。
-                          <br>无论它能走多远，抑或如何支撑？至少我曾倾注全心，无怨无悔 <i class="layui-icon"></i>
-                          <br>详单：
-                          <ul>
-                              <li>请前往官网：wiki.521wall.cn</li>
-                          </ul>
+                          LoveWall 2.0 <i class="layui-icon">&#xe6af;</i>
+                          <br>不枉近百个日日夜夜与之为伴。
+                          <br>因小而大，因弱而强。
+                          <br>同步上线wiki文档：wiki.521wall.cn
                         </p>
                       </div>
-                    </li>
+                  </li>
                   <li class="layui-timeline-item">
                     <i class="layui-icon layui-timeline-axis"></i>
                     <div class="layui-timeline-content layui-text">
-                      <h3 class="layui-timeline-title">2月2日</h3>
-                      <p>V1.5正式改版完成<em>版本问题只在内部公布</em></p>
+                      <h3 class="layui-timeline-title">2019年2月2日</h3>
+                      <p>V1.5正式改版完成<br>
+                      <em>版本问题只在内部公布</em>
+                      </p>
                       <ul>
                         <li>修复发布时间限制</li>
                         <li>移植ThinkPHP</li>
@@ -58,9 +74,10 @@
                       <h3 class="layui-timeline-title">2018年12月15日</h3>
                       <p>
                         开始二开工程
-                        <br>成员：<a href="https://www.kres.cn">@Cheng(橘子)</a>、<a href="https://catni.cn/">@猫腻</a>、<a >@久念;</a>贡献分前后
-                        <br>第一阶段：修复各方面BUG(限制，发布问题)
-                        <br>第二阶段：重写程序，移植<a href="http://www.thinkphp.cn">ThinkPHP5.0</a>
+                        <br>团队：锐韵网络
+                        <br>成员：<a href="https://www.kres.cn">@橘子</a>·<a href="https://catni.cn/">@猫腻</a>·<a href="https://50kw.cn"><a>@久念</a>
+                        <br>第一阶段：修复各方面BUG
+                        <br>第二阶段：移植<a href="http://www.thinkphp.cn">ThinkPHP5</a>
                         <br>第三阶段：引入<a href="http://www.layui.com">LayUI</a>美化
                       </p>
                     </div>
@@ -68,78 +85,14 @@
                   <li class="layui-timeline-item">
                     <i class="layui-icon layui-timeline-axis"></i>
                     <div class="layui-timeline-content layui-text">
-                      <div class="layui-timeline-title">V1.0 由@折影轻梦编写 <a href="https://github.com/mixcm/lovewall">Github</a></div>
+                      <h3 class="layui-timeline-title">2017年9月10日</h3>
+                      	V1.0 由@折影轻梦编写 <a href="https://github.com/mixcm/lovewall">Github</a>
                     </div>
                   </li>
                 </ul>  
-                 
             </div>
           </div>
           </div>
-          
   </div>
- <br>
-<script>
-        console.log(`%c Info:`, `color: #03A9F4; font-weight: bold`, '欢迎来到这个页面！首先感谢您信任我们并使用我们的程序，遇到BUG可提交至下方邮箱，谢谢您的配合！');
-        console.log(`%c Site:`, `color: #03A9F4; font-weight: bold`, 'https://support.kres.cn Or https://521wall.cn');
-        console.log(`%c Email:`, `color: #4CAF50; font-weight: bold`, 'support@kres.cn Or wy-hai@qq.com');
-layui.use('element', function(){
-  var element = layui.element;
-  
-  //…
-});
-</script>
   <br/>
-	<div class="copyright container">
-		&copy; {$Request.time|date="Y",###} 
-		<a href="/">{$data.system.name}</a>&nbsp;&nbsp;
-    <a href="http://beian.miit.gov.cn" target="_blank">{$data.system.icp}</a>
-    &nbsp;{$data.system.cnzz}
-	</div>
-</div>
-<script src="//cdn.bootcss.com/jquery/2.2.4/jquery.min.js"></script>
-<script src="//pv.sohu.com/cityjson?ie=utf-8"></script>
-<script>
-	$.ajax({
-		type: 'GET',
-		url: 'https://www.tianqiapi.com/api/',
-		data: 'version=v1&style=1001&city=',
-		dataType: 'JSON',
-		error: function () {
-			alert('网络错误');
-		},
-		success: function (res) {
-			uptime = res.update_time.substring(11);
-			uptime = uptime.substring(0,uptime.length-3);
-			$("#temp1").html(res.data[0].tem);
-			$('#weather-ico').attr('src','__STATICS__/img/'+res.data[0].wea_img+".png");
-		}
-	});
-	var ismobile="{$data.ismobile}";
-	if(ismobile==0){
-    	(()=>{let 
-        h=42;
-        let d=(n)=>Math.floor(Math.random()*n);
-        let k=(c)=>{let s=document.createElement('style');
-        if(!!(window.attachEvent && !window.opera)){
-            s.styleSheet.cssText=c;
-        }else{
-            s.appendChild(document.createTextNode(c));
-        }
-        document.getElementsByTagName('head')[0].appendChild(s);
-    };
-    k('@keyframes u{0%{transform:rotate(0deg);}25%{transform:rotate(10deg);}50%{transform:rotate(0deg);}75%{transform:rotate(-10deg);}100%{transform:rotate(0deg);}};');
-    k('@keyframes m{0%{margin-top:2vh;opacity:0;}20%{opacity:1.0;margin-top:0vh;margin-left:0vw;transform:rotate('+d(90)+'deg);}100%{opacity:0.4;margin-top:100vh;margin-left:'+d(4)+'vw;transform:rotate(1080deg);}};');
-    let w=document.createElement('div');
-    w.id='daWorld';
-    w.style='animation:u 60s ease-in infinite;position:fixed;top:0;right:0;bottom:0;left:0;pointer-events:none;';
-    document.body.appendChild(w);
-    while(h--){
-        let o=document.createElement('div');
-        o.style=`pointer-events:none;opacity:0;animation:m ${d(14)+6}s ease-in ${d(4000)}ms infinite;z-index:1000;position:fixed;top:${d(40)}vh;left:${d(100)}vw;font-size:${d(40)+20}px;color:${['#d00','#e66','#fcc'][d(3)]};`;
-        o.innerHTML=['♡','♥'][d(2)];w.appendChild(o);
-        }})()
-    }
-</script>
-</body>
-</html>
+{include file="comm/footer"}

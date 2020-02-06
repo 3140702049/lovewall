@@ -3,9 +3,9 @@
 -- https://www.phpmyadmin.net
 --
 -- Host: localhost
--- Generation Time: 2019-07-05 19:18:16
+-- Generation Time: 2020-02-06 15:39:13
 -- 服务器版本： 5.5.62-log
--- PHP Version: 7.0.33
+-- PHP Version: 5.4.45
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 SET time_zone = "+00:00";
@@ -17,7 +17,7 @@ SET time_zone = "+00:00";
 /*!40101 SET NAMES utf8mb4 */;
 
 --
--- Database: `idc_521wall_cn`
+-- Database: `x_521wall_cn`
 --
 
 -- --------------------------------------------------------
@@ -32,7 +32,7 @@ CREATE TABLE IF NOT EXISTS `love_barrager` (
   `info` varchar(255) CHARACTER SET utf8 DEFAULT NULL,
   `img` varchar(255) DEFAULT NULL,
   `color` varchar(255) DEFAULT NULL
-) ENGINE=InnoDB AUTO_INCREMENT=17 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=20 DEFAULT CHARSET=latin1;
 
 -- --------------------------------------------------------
 
@@ -49,7 +49,7 @@ CREATE TABLE IF NOT EXISTS `love_comment` (
   `create_time` datetime DEFAULT NULL COMMENT '评论或回复发表时间',
   `post_id` int(11) DEFAULT NULL,
   `like` int(255) DEFAULT '0'
-) ENGINE=MyISAM AUTO_INCREMENT=257 DEFAULT CHARSET=utf8;
+) ENGINE=MyISAM AUTO_INCREMENT=262 DEFAULT CHARSET=utf8;
 
 -- --------------------------------------------------------
 
@@ -69,7 +69,7 @@ CREATE TABLE IF NOT EXISTS `love_contents` (
   `date` int(255) NOT NULL,
   `like` int(255) DEFAULT '0',
   `comm` int(255) DEFAULT '0'
-) ENGINE=InnoDB AUTO_INCREMENT=259 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=320 DEFAULT CHARSET=utf8;
 
 -- --------------------------------------------------------
 
@@ -82,14 +82,14 @@ CREATE TABLE IF NOT EXISTS `love_notice` (
   `tid` varchar(255) DEFAULT NULL,
   `content` varchar(255) CHARACTER SET utf8 DEFAULT NULL,
   `time` int(11) DEFAULT NULL
-) ENGINE=InnoDB AUTO_INCREMENT=17 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=42 DEFAULT CHARSET=latin1;
 
 --
 -- 转存表中的数据 `love_notice`
 --
 
 INSERT INTO `love_notice` (`id`, `tid`, `content`, `time`) VALUES
-(16, '0.86586100 15622094685d1d6cbcd3647', '<p style="text-align: center;"><b><i>欢迎使用LoveWall程序，看到本公告说明又一个新站产生了<img src="http://idc.521wall.cn/static/layui/images/face/30.gif" alt="[思考]"></i></b></p>', 1562209468);
+(1, '0.77970900 15808938535e3a869dbe5bf', '<h2 style="text-align: center;">LoveWall提醒您：</h2><p><br></p><h3 style="text-align: center;">欢迎使用LoveWall程序，看到本公告说明又一个新站产生了!</h3><div style="text-align: center;"><br></div><h4 style="text-align: right; ">By : Rhyme·network</h4>', 1580893853);
 
 -- --------------------------------------------------------
 
@@ -107,7 +107,7 @@ CREATE TABLE IF NOT EXISTS `love_open_school` (
   `addtime` datetime DEFAULT NULL,
   `status` int(1) DEFAULT '0',
   `description` varchar(255) DEFAULT NULL
-) ENGINE=InnoDB AUTO_INCREMENT=33 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=36 DEFAULT CHARSET=utf8;
 
 -- --------------------------------------------------------
 
@@ -126,18 +126,18 @@ CREATE TABLE IF NOT EXISTS `love_options` (
 --
 
 INSERT INTO `love_options` (`id`, `name`, `value`) VALUES
-(1, 'title', 'LoveWall表白墙V2.0'),
-(2, 'keywords', 'LoveWall,表白墙V2.0'),
+(1, 'title', 'LoveWall表白墙V2.0Pro'),
+(2, 'keywords', 'LoveWall表白墙V2.0Pro|表白墙|521wall.cn|LoveWall|锐韵网络|Rhyme·network'),
 (3, 'description', '我说的话，不知远方的人听见了吗？'),
-(4, 'icp', '海外服务器要个屁备案'),
+(4, 'icp', '我就喜欢绕过管局就不备案'),
 (6, 'limit_time', '3'),
-(7, 'limit_mous', '0'),
+(7, 'limit_mous', '1'),
 (8, 'qq', '1275654934'),
-(10, 'name', 'LoveWall表白墙V2.0'),
+(10, 'name', 'LoveWall2.0Pro'),
 (11, 'page_about', '官方Demo <br>站点:521wall.cn<br>\n官方Wiki <br>wiki.521wall.cn'),
-(12, 'limit_ip', '2'),
+(12, 'limit_ip', '999'),
 (13, 'admin_account', '1'),
-(14, 'cnzz', NULL);
+(14, 'cnzz', '');
 
 -- --------------------------------------------------------
 
@@ -156,7 +156,7 @@ CREATE TABLE IF NOT EXISTS `love_user` (
   `login_ip` text,
   `pass_err` int(255) unsigned zerofill DEFAULT '000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000',
   `email` varchar(255) DEFAULT NULL
-) ENGINE=MyISAM AUTO_INCREMENT=16 DEFAULT CHARSET=utf8mb4;
+) ENGINE=MyISAM AUTO_INCREMENT=17 DEFAULT CHARSET=utf8mb4;
 
 --
 -- 转存表中的数据 `love_user`
@@ -195,14 +195,14 @@ CREATE TABLE IF NOT EXISTS `love_website` (
   `web_description` text CHARACTER SET utf8,
   `web_logo` text,
   `hot` int(11) unsigned zerofill DEFAULT '00000000000'
-) ENGINE=InnoDB AUTO_INCREMENT=8 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=24 DEFAULT CHARSET=latin1;
 
 --
 -- 转存表中的数据 `love_website`
 --
 
 INSERT INTO `love_website` (`id`, `zid`, `status`, `count`, `web_name`, `web_qq`, `web_description`, `web_logo`, `hot`) VALUES
-(2, '46f312f8-599f-11e9-90ff-1a23648d9544', 1, 0, '南宁职业技术学院', 'lovewall', '当我无计可施，驻足不前时；当我被黑暗覆盖，被绝望淹没时 谁是我的照明灯？', 'https://i.loli.net/2019/05/25/5ce8908de1f9d47116.jpg', 00000000036);
+(1, '46f312f8-599f-11e9-90ff-1a23648d9544', 1, 0, '家里蹲大学', 'lovewall', '当我无计可施，驻足不前时；当我被黑暗覆盖，被绝望淹没时 谁是我的照明灯？', '//x.521wall.cn/uploads/20200206/06da2dfa8949e8960392811d344ae8f7.jpg', 00000000000);
 
 --
 -- Indexes for dumped tables
@@ -270,27 +270,27 @@ ALTER TABLE `love_website`
 -- AUTO_INCREMENT for table `love_barrager`
 --
 ALTER TABLE `love_barrager`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=17;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=20;
 --
 -- AUTO_INCREMENT for table `love_comment`
 --
 ALTER TABLE `love_comment`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT COMMENT '主键id',AUTO_INCREMENT=257;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT COMMENT '主键id',AUTO_INCREMENT=262;
 --
 -- AUTO_INCREMENT for table `love_contents`
 --
 ALTER TABLE `love_contents`
-  MODIFY `id` int(255) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=259;
+  MODIFY `id` int(255) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=320;
 --
 -- AUTO_INCREMENT for table `love_notice`
 --
 ALTER TABLE `love_notice`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=17;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=42;
 --
 -- AUTO_INCREMENT for table `love_open_school`
 --
 ALTER TABLE `love_open_school`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=33;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=36;
 --
 -- AUTO_INCREMENT for table `love_options`
 --
@@ -300,7 +300,7 @@ ALTER TABLE `love_options`
 -- AUTO_INCREMENT for table `love_user`
 --
 ALTER TABLE `love_user`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=16;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=17;
 --
 -- AUTO_INCREMENT for table `love_user_log`
 --
@@ -310,7 +310,7 @@ ALTER TABLE `love_user_log`
 -- AUTO_INCREMENT for table `love_website`
 --
 ALTER TABLE `love_website`
-  MODIFY `id` int(11) unsigned NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=8;
+  MODIFY `id` int(11) unsigned NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=24;
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;

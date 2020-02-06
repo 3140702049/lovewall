@@ -30,16 +30,13 @@
                     <div class="layui-card">
                         <div class="layui-card-body ">
                             <blockquote class="layui-elem-quote">欢迎管理员：
-                                <span class="x-red">{$data.user_name}</span>！当前时间:{$data.dateTime}
+                                <span class="x-red">{$data.user_name}</span>&nbsp;对本程序的支持！当前时间:{$data.dateTime}
                             </blockquote>
                             <blockquote class="layui-elem-quote">
-                                <span class="x-red">温馨提示：</span>首次使用请配置发信邮箱 \extend\PHPMailer\SendEmail.php
+                                <span class="x-red">温馨提示：</span>首次使用请配置邮箱 <strong style="color:green;">\extend\PHPMailer\SendEmail.php</strong>
                             </blockquote>
                             <blockquote class="layui-elem-quote">
-                                <span class="x-red">温馨提示：</span>当前版本LoveWall2.0.190707,持续更新,遇到bug或有什么建议可<a href="https://pro.kres.cn/form/index/bugSubmit"><span class="x-red">点此提交</span></a>
-                            </blockquote>
-                            <blockquote class="layui-elem-quote">
-                                <span class="x-red">温馨提示：</span>最新版本本站为保障站点安全暂不做在线更新！新版本请关注 <a target="_blank" href="http://www.521wall.cn">LoveWall</a>
+                                <span class="x-red">温馨提示：</span>此版本2.0Pro最终版本，不再维护，尽请关注下一个大版本
                             </blockquote>
                         </div>
                     </div>
@@ -103,22 +100,32 @@
                                 <tbody>
                                     <tr>
                                         <th>LoveWall Version</th>
-                                        <td>2.0.190520</td></tr>
+                                        <td>2.0.200205</td>
+                                    </tr>
                                     <tr>
                                         <th>服务器地址</th>
-                                        <td>{$Think.server.SERVER_NAME}</td></tr>
+                                        <td>{$Think.server.SERVER_NAME}</td>
+                                    </tr>
                                     <tr>
                                         <th>操作语言</th>
-                                        <td>{$Think.server.HTTP_ACCEPT_LANGUAGE}</td></tr>
+                                        <td>{$Think.server.HTTP_ACCEPT_LANGUAGE}</td>
+                                    </tr>
                                     <tr>
                                         <th>服务器端口</th>
-                                        <td>{$Think.server.SERVER_PORT}</td></tr>
+                                        <td>{$Think.server.SERVER_PORT}</td>
+                                    </tr>
                                     <tr>
                                         <th>PHP版本</th>
-                                        <td>{$Think.PHP_VERSION}</td></tr>
+                                        <td>{$Think.PHP_VERSION}</td>
+                                    </tr>
+                                    <tr>
+                                        <th>X-admin</th>
+                                        <td>2.2</td>
+                                    </tr>
                                     <tr>
                                         <th>ThinkPHP</th>
-                                        <td>{$Think.THINK_VERSION}</td></tr>
+                                        <td>{$Think.THINK_VERSION}</td>
+                                    </tr>
                                 </tbody>
                             </table>
                         </div>

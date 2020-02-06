@@ -1,180 +1,52 @@
 <!--
  * @Description: 
- * @version: 2.0
- * @Author: 小橙子
- * @Date: 2019-05-16 14:31:30
- * @Website: https://www.kres.cn
- * @Email: 1697779290@qq.com
+ * @version: 2.0Pro
+ * @Author: 锐韵网络(Rhyme Natwork)
+ * @Date: 2019-02-06 14:31:30
+ * @Website: https://521wall.cn
+ * @Email: 1697779290@qq.com Or wy-hai@qq.com
  -->
 <!DOCTYPE html>
 <html>
-<head>
-<title>
-  {switch name="postdata.mous"}
-  	{case value="1"}一位不署名发帖{/case}
-  	{default /}{$postdata.name} 的帖子
-  {/switch}
-  
-  </title>
-  <meta charset="utf-8"/>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no"/>
-  <link rel="shortcut icon" href="__STATIC__/favicon.ico"/>
-  <link href="//cdn.bootcss.com/font-awesome/4.7.0/css/font-awesome.css" rel="stylesheet"/>
-      <link rel="stylesheet" href="__STATIC__/css/app.css" type="text/css" />
-      <link rel="stylesheet" href="__STATIC__/css/style.css" type="text/css" />
-    <link rel="stylesheet" href="__STATIC__/css/app.css" type="text/css" />
-    <link rel="stylesheet" href="__STATIC__/css/font.css" type="text/css" />
-  <link href="__STATIC__/css/i.css" rel="stylesheet"/>
-  <link rel="stylesheet" href="__STATIC__/css/barrager.css">
-  <link rel="stylesheet" href="__STATIC__/css/share.min.css">
-  <link rel="stylesheet" href="__STATIC__/layui/css/layui.css">
-  <meta content="yes" name="apple-mobile-web-app-capable">
-<style>
-        .comment-filed{
-        margin:0 auto;
-    }
-    
-    .comment-num{
-        text-align: right;  
-        font-size:14px;
-    }
-    .div-txt-submit{
-        text-align:right;
-        margin-top:8px;
-    
-    }
-    
-    .comment-submit{
-        background-color:#63B8FF;
-        margin-top:15px;
-        text-decoration:none;
-        color:#fff;
-        padding:5px;
-        font-size:14px;
-    }
-    
-    .txt-commit{
-        border:1px solid blue;
-        width:620px;
-        height: 60px; 
-        padding: 10px;
-    }
-    
-    .txt-reply{
-        width: 100%; 
-        height: 60px;
-    }
-    .comment-filed-list{
-        margin-top:20px;
-    }
-    
-    .comment-list{
-        margin-top:2px;
-        width:herit;
-        height:50px;
-        border-top:1px solid gray;
-    }
-    
-    .comment-ul{
-        list-style:none;
-        padding-left:0;
-    }
-    
-    .head-pic{
-        width:40px;
-        height:40px;    
-    }
-    
-    .cm{
-        position:relative;
-        top:0px;
-        left:40px;
-        top:-40px;
-    }
-    
-    .cm-header{
-        padding-left:5px;
-    }
-    
-    .cm-content{
-        padding-left:5px;
-    }
-    
-    .cm-footer{
-        padding-bottom:15px;
-        text-align:right;
-        border-bottom: 1px dotted #CCC;
-        margin-right: 40px;
-        margin-top: -35px;
-    }
-    
-    .comment-reply{
-        text-decoration:none;
-        color:gray;
-        font-size: 14px;
-    }
-    
-    .children{
-        list-style:none;
-        background-color:#FAFAFA;
-        padding-left:0;
-        margin-left:40px;
-        margin-top: -35px;
-    }
-    
-    .children-cm{
-        position:relative;  
-        left:40px;
-        top:-40px;
-        width:90%;
-    }
-    #text{
-        font-size: 18px;
-        margin-top: 5px;
-        padding-top: 10px;
-        color: darksalmon;
-    }
-    #contenttime{
-        margin-top: -15px;
-        font-size: 15px;
-    }
-    .content{
-        background:#E0F8F7;
-        border-radius: 500px;
-        height: 70px;
-    }
-    .comment-content{
-        width: 100%;
-    }
-    .comment-pages{
-        margin-top: 20px;
-        background: #fff;
-        box-shadow: 0 0 8px rgba(0, 0, 0, .1);
-        padding: 20px;
-        border-radius: 4px;
-        margin-bottom: 50px;
-        margin-left: 20px;
-        margin-right: 20px;
-    }
-    .nickname{
-        float: left;
-    }
-    </style>
-    </head>
-    <body>
+  <head>
+	  <title>
+		  {switch name="postdata.mous"}
+		  	{case value="1"}一位不署名发帖{/case}
+		  	{default /}{$postdata.name} 的帖子
+		  {/switch}
+	  </title>
+	  <meta charset="utf-8"/>
+	  <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no"/>
+	  <link rel="shortcut icon" href="__STATIC__/favicon.ico"/>
+	  <link href="//cdn.bootcss.com/font-awesome/4.7.0/css/font-awesome.css" rel="stylesheet"/>
+	  <link rel="stylesheet" href="__STATIC__/css/app.css" type="text/css" />
+	  <link rel="stylesheet" href="__STATIC__/css/style.css" type="text/css" />
+	  <link rel="stylesheet" href="__STATIC__/css/app.css" type="text/css" />
+	  <link rel="stylesheet" href="__STATIC__/css/font.css" type="text/css" />
+	  <link rel="stylesheet" href="__STATIC__/css/i.css"/>
+	  <link rel="stylesheet" href="__STATIC__/css/comment.css"/>
+	  <link rel="stylesheet" href="__STATIC__/css/barrager.css">
+	  <link rel="stylesheet" href="__STATIC__/css/share.min.css">
+	  <link rel="stylesheet" href="__STATIC__/layui/css/layui.css">
+	  <meta content="yes" name="apple-mobile-web-app-capable">
+  </head>
+  <body>
 <div id="header">
+	<!-- 天气 -->
 	<div class="header">
-		<div class="heart">
+		<div class="heart"></div>
+		<div class="header-weather">
+			<div id="temp1">loding...</div>
+			<img id="weather-ico">
 		</div>
-      <div class="header-weather" style="float:right;position: initial;margin-top: -240PX;margin-right: 10px">
-			<div id="temp1" style="float: right;font-size: 18px ;margin-right: -0px;color: white; margin-top: -102px" >loding...</div>
-			<img id="weather-ico" style="width: 30px;float: right;" src="" alt="">
-		</div>
-		<div class="beat beat-1">
-		</div>
-		<div class="beat beat-2">
-		</div>
+		<div class="beat beat-1"></div>
+		<div class="beat beat-2"></div>
 	</div>
+	<!-- 水波特效 -->
+	<div class="lovewall_watertiv">
+    	<div class="lovewall_water_1"></div>
+        <div class="lovewall_water_2"></div>
+    </div>
 	<!-- 一言 -->
 	<center>
 	<p id="hitokoto" style="padding:10px">
@@ -380,7 +252,7 @@
       $.ajax({
         type: 'GET',
         url: 'https://www.tianqiapi.com/api/',
-        data: 'version=v1&style=1001&city=',
+        data: 'version=v1&appid=66414149&appsecret=11AkDKo9',
         dataType: 'JSON',
         error: function () {
             layer.msg('网络错误');
@@ -389,7 +261,7 @@
             uptime = res.update_time.substring(11);
             uptime = uptime.substring(0,uptime.length-3);
             $("#temp1").html(res.data[0].tem);
-            $('#weather-ico').attr('src','__STATICS__/img/'+res.data[0].wea_img+".png");
+            $('#weather-ico').attr('src','__STATICS__/img/weather/'+res.data[0].wea_img+".png");
         }
     });
         function submit(){

@@ -22,6 +22,40 @@ class index extends Base
     {
         return view('index');
     }
+        public function sys_set_basic(){
+        if (Request::instance()->post('data')) {
+            # code...
+            $data=Request::instance()->post('data');
+            $data=json_decode($data,true);
+            $this->setConfig('name',$data['name']);
+            $this->setConfig('title',$data['title']);
+            $this->setConfig('keywords',$data['keywords']);
+            $this->setConfig('description',$data['description']);
+            $this->setConfig('page_about',$data['page_about']);
+            $this->setConfig('qq',$data['qq']);
+            $this->setConfig('cnzz',$data['cnzz']);
+            $this->setConfig('icp',$data['icp']);
+            $this->setConfig('admin_account',$data['admin_account']);
+            $back['code']=1;
+            $back['info']='修改成功！';
+            return json($back);
+        } else {
+            # code...
+            $data['name']=$this->getConfig('name')['value'];
+            $data['title']=$this->getConfig('title')['value'];
+            $data['keywords']=$this->getConfig('keywords')['value'];
+            $data['description']=$this->getConfig('description')['value'];
+            $data['page_about']=$this->getConfig('page_about')['value'];
+            $data['cnzz']=$this->getConfig('cnzz')['value'];
+            $data['icp']=$this->getConfig('icp')['value'];
+            $data['qq']=$this->getConfig('qq')['value'];
+            $data['admin_account']=$this->getConfig('admin_account')['value'];
+            $data['user']['list']=Db::name('user')->select();
+            return view('sys_set_basic',[
+                'data'=>$data,
+            ]);
+        }
+    }
     public function schoolList(){
         $data['list']=Db::name('website')->paginate(15);
         $data['page']=$data['list']->render();
@@ -140,7 +174,7 @@ class index extends Base
                 # code...
                 $data=Request::instance()->post('data');
                 $data=json_decode($data,true);
-                unset($data['smfile']);
+                unset($data['file']);
                 $res=Db::name('website')->where('zid',$data['zid'])->update($data);
                 if ($res) {
                     # code...
@@ -176,7 +210,7 @@ class index extends Base
                 # code...
                 $data=Request::instance()->post('data');
                 $data=json_decode($data,true);
-                unset($data['smfile']);
+                unset($data['file']);
                 $statusReturn=$this->schoolAdd($data['web_name'],$data['web_qq'],$data['web_description'],$data['web_logo']);
                 if ($statusReturn!='') {
                     # code...
